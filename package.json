@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "BUILD_PATH='./dist' react-scripts build",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express-async-errors": "^3.1.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.2",
+    "passport": "^0.6.0",
+    "passport-local-mongoose": "^7.1.2"
+  }
+}

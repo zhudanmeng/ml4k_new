@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../partials/head'); %>
+</head>
+
+<body>
+    <section class="bg-white min-h-screen">
+
+        <%- include('../../partials/nav'); %>
+
+            <div class="w-full max-w-md mx-auto mt-7 md:mt-32 overflow-hidden bg-white rounded-lg shadow-md">
+                <div class="px-6 py-4">
+                    <h2 class="text-3xl font-bold text-center text-gray-700 my-5">Add School</h2>
+
+                    <form method="POST" action="/admin/add-school">
+                        <div class="w-full mt-4">
+                            <input
+                                class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+                                type="text" placeholder="School Name" name="schoolName" />
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4">
+                            <button
+                                class="w-full px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none"
+                                type="submit">Add School</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="w-full max-w-lg mx-auto my-10 overflow-hidden bg-white rounded-lg shadow-md">
+                <div class="px-6 py-4">
+                    <h2 class="text-3xl font-bold text-gray-700 my-5">All Schools</h2>
+
+                    <table class="border-collapse table-fixed w-full text-sm">
+                        <!-- <thead>
+                            <tr>
+                                <th class="border-b font-bold p-4 pl-8 pt-0 pb-3 text-black text-left">
+                                    School Name
+                                </th>
+                            </tr>
+                        </thead> -->
+                        <tbody class="bg-white">
+
+                            <% if (schools.length === 0) { %>
+                            <tr>
+                                <td class="border-y-4 border-gray-100 p-2 text-black font-medium">
+                                    No School Added Yet
+                                </td>
+                            </tr>
+                            <% } %>
+
+                            <% schools.forEach(school=> { %>
+                                <tr>
+                                    <td class="border-y-4 border-gray-100 p-2 text-black font-medium">
+                                        <%= school.schoolName %>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+    </section>
+</body>
+
+</html>
